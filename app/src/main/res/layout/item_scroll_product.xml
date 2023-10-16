@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/layout_item_product"
+   android:layout_marginStart="20dp"
+    android:focusableInTouchMode="true"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="190dp"
+        android:id="@+id/cv_image"
+        android:layout_height="270dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#E3D5D5"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:id="@+id/iv_product_images"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_product" />
+
+        <ImageView
+            android:id="@+id/iv_favorite_images"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="right"
+            android:src="@drawable/icon_favorite" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="Mittens Stylish Jacket" />
+
+    <TextView
+        android:id="@+id/tv_product_price"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="€149.99"
+        android:textStyle="bold" />
+</LinearLayout>

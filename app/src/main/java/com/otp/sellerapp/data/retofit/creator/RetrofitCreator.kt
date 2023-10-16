@@ -1,6 +1,5 @@
 package com.otp.sellerapp.data.retofit.creator
 
-import com.otp.sellerapp.data.retofit.interceptor.CookiesInterceptor
 import com.otp.sellerapp.data.retofit.interceptor.TokenInterceptor
 import com.google.gson.Gson
 import com.otp.sellerapp.BuildConfig
@@ -16,7 +15,6 @@ private const val timeoutConnect = 30   //In seconds
 class RetrofitCreator (
     baseUrl: String,
     tokenInterceptor: TokenInterceptor,
-    cookiesInterceptor: CookiesInterceptor
 ) {
     private val okHttpBuilder: OkHttpClient.Builder = OkHttpClient.Builder()
     private val retrofit: Retrofit
@@ -32,7 +30,6 @@ class RetrofitCreator (
 
     init {
         okHttpBuilder.addInterceptor(tokenInterceptor)
-        okHttpBuilder.addInterceptor(cookiesInterceptor)
         okHttpBuilder.addInterceptor(logger)
         okHttpBuilder.connectTimeout(timeoutConnect.toLong(), TimeUnit.SECONDS)
         okHttpBuilder.readTimeout(timeoutRead.toLong(), TimeUnit.SECONDS)
